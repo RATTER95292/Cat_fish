@@ -6,11 +6,15 @@
  from Kurs_Rub import kurs
  from data import clock
   
+ #Вывод сообщения о том что бот запущен
  f = open('zap.txt','r')
  print(*f)
- bot = telebot.TeleBot('5254981396:AAFErMwOMaOoYWtTF2hJ48mopC7lRdnMN4I')
+ 
+ #Привязываем свою программу к телеграмм-боту вместь "Your Tocen" вставляем его токен
+ bot = telebot.TeleBot('Your Tocen')
   
  @bot.message_handler(commands=['help','secret','kurs'])
+ 
  def comands(message):
      if message.text == '/help':
          bot.send_message(message.chat.id, '/secret - секрет \n /kurs - курс рубля')
